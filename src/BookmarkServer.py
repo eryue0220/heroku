@@ -120,6 +120,7 @@ class Shortener(http.server.BaseHTTPRequestHandler):
         length = int(self.headers.get('Content-length', 0))
         body = self.rfile.read(length).decode()
         params = parse_qs(body)
+        print(params)
         longuri = params["longuri"][0]
         shortname = params["shortname"][0]
 
